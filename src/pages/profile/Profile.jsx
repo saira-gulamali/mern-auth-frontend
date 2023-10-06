@@ -1,7 +1,7 @@
 import Card from "../../components/card/Card";
 // import profileImg from "../../assets/avatarr.png";
 import "./Profile.scss";
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import PageMenu from "../../components/pageMenu/PageMenu";
 import useRedirectLoggedOutUser from "../../customHook/useRedirectLoggedOutUser";
 import { useDispatch, useSelector } from "react-redux";
@@ -99,20 +99,20 @@ const Profile = () => {
     }
   };
 
-  // useLayoutEffect(() => {
-  //   if (user) {
-  //     setProfile({
-  //       ...profile,
-  //       name: user.name,
-  //       email: user.email,
-  //       photo: user.photo,
-  //       phone: user.phone,
-  //       bio: user.bio,
-  //       role: user.role,
-  //       isVerified: user.isVerified,
-  //     });
-  //   }
-  // }, [user]);
+  useLayoutEffect(() => {
+    if (user) {
+      setProfile({
+        ...profile,
+        name: user.name,
+        email: user.email,
+        photo: user.photo,
+        phone: user.phone,
+        bio: user.bio,
+        role: user.role,
+        isVerified: user.isVerified,
+      });
+    }
+  }, [user]);
 
   return (
     <>

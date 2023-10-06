@@ -1,4 +1,3 @@
-import React from "react";
 import "./Notification.scss";
 import { useDispatch } from "react-redux";
 import {

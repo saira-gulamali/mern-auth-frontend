@@ -88,6 +88,7 @@ function App() {
               </Layout>
             }
           />
+          <Route path="*" element={<p>Page not found</p>} />
         </Routes>
       </BrowserRouter>
     </>
